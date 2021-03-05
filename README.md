@@ -74,6 +74,8 @@ L'instruction dans ``volumes`` récupère les données du fichier ``country_vacc
     
 ## Grafana - Création des Dashboards :
 
+### Dashboard "Sommes des personnes vaccinées aux Etats-Unis" :
+
 -``Create -> Dashboard -> + Add New Panel``,
 
 -``Edit SQL`` :
@@ -102,5 +104,41 @@ Résultat :
     
     IMAGE
 
-
+### Dashboard "Personnes vaccinées sur cent, par pays" :
     
+-``Edit SQL`` :
+
+    SELECT
+      date AS "time",
+      country AS metric,
+      people_vaccinated_per_hundred
+    FROM country_vaccinations
+    WHERE
+      $__timeFilter(date)
+    ORDER BY country
+    
+-Modifications des paramètres d'affichage dans ``Panel`` :
+
+* ``Panel -> Setting -> Panel Title`` = ``Personnes vaccinées sur cent, par pays``,
+
+* ``Panel -> Visualisation -> Bar Gauges``,
+    
+* ``Panel -> Display`` - > ``Calculation`` = ``Last (Not Null)``,
+
+* ``Panel -> Display`` - > ``Orientation`` => ``Horizontal``,
+
+* ``Panel -> Display`` - > ``Display Mode`` => ``Gradient``,
+
+-Modifications des paramètres d'affichage dans ``Field`` :
+
+* ``Min`` = 0, ``Max`` = 60,
+
+* ``No Value`` = ``NO VALUE``,
+
+* ``Color Scheme`` = ``Green-Yellow-Red (by value)``.
+    
+-``Save``.
+
+Résultat :
+    
+    IMAGE
