@@ -32,24 +32,24 @@
 
 -Montage du docker-compose.yaml (``docker-compose up -d``) qui contient :
 
-  version: "2"
+    version: "2"
 
-  services:
-    grafana:
-      image: grafana/grafana:latest
-      ports:
-        - 3000:3000
-      user: "root"
+    services:
+      grafana:
+        image: grafana/grafana:latest
+        ports:
+          - 3000:3000
+        user: "root"
 
-    mysql:
-      image: mysql:5.7
-      ports:
-      - "3306:3306"
-      environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: country_vaccinations
-      volumes:
-      - ./country_vaccinations.sql:/docker-entrypoint-initdb.d/init.sql
+      mysql:
+        image: mysql:5.7
+        ports:
+        - "3306:3306"
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: country_vaccinations
+        volumes:
+        - ./country_vaccinations.sql:/docker-entrypoint-initdb.d/init.sql
     
 Avec les deus services Grafana et MySQL. ``image`` correspond au type de service et à sa version, ``port`` au port utilisé, ``user`` et ``environment`` les renseignements supplémentaires.
     
