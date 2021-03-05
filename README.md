@@ -32,7 +32,7 @@
 
 -Montage du docker-compose.yaml (``docker-compose up -d``) qui contient :
 
-version: "2"
+  version: "2"
 
   services:
     grafana:
