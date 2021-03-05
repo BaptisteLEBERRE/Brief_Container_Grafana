@@ -90,11 +90,11 @@ L'instruction dans ``volumes`` récupère les données du fichier ``country_vacc
 
 -Modifications des paramètres d'affichage dans ``Panel`` :
 
-    -``Panel -> Setting -> Panel Title`` = ``Sommes des personnes vaccinées aux Etats-Unis``,
+* ``Panel -> Setting -> Panel Title`` = ``Sommes des personnes vaccinées aux Etats-Unis``,
 
-    -``Panel -> Visualisation -> Graph``,
+* ``Panel -> Visualisation -> Graph``,
     
-    -``Panel -> Display`` => Cocher ``Lines`` et ``Points``.
+* ``Panel -> Display`` => Cocher ``Lines`` et ``Points``.
     
 -``Save``.
 
