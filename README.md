@@ -22,11 +22,11 @@
 
 -Transfert des fichiers ``docker-compose.yaml`` et ``country_vaccinations.sql``.
 
-## Ubuntu - Montage du docker :
+## Ubuntu - Montage du Docker :
 
 -Déplacement sur le dossier de réception (``cd /home/user1/docker/country_vaccinations``),
 
--Connexion à docker (``sudo docker`` suivi du mot de passe docker),
+-Connexion à Docker (``sudo docker`` suivi du mot de passe Docker),
 
 -Optionel : Installation de docker-compose sur le serveur (``sudo apt install docker-compose``),
 
