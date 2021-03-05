@@ -5,22 +5,31 @@
 ``# ssh user@10.10.51.151``
 
 -Première connexion,
+
 -Changement du mot de passe,
+
 -Déconnexion automatique,
+
 -Deuxième connexion.
 
 ## FileZilla - Création du dossier et transfert des fichiers :
 
 -Insertion de l'hôte (``sftp://10.10.51.151``), de l'identifiant (``user1``) et du mot de passe.
+
 -Insertion du chemin du dossier originel dans ``Site Local`` (``C:\Users\utilisateur\Desktop\Briefs\Brief_Container_Grafana\``),
+
 -Création dossier de réception sur le serveur (``/home/user1/docker/country_vaccinations``),
+
 -Transfert des fichiers ``docker-compose.yaml`` et ``country_vaccinations.sql``.
 
 ## Ubuntu - Montage du docker :
 
 -Déplacement sur le dossier de réception (``cd /home/user1/docker/country_vaccinations``),
+
 -Connexion à docker (``sudo docker`` suivi du mot de passe docker),
+
 -Optionel : Installation de docker-compose sur le serveur (``sudo apt install docker-compose``),
+
 -Montage du docker-compose.yaml (``docker-compose up -d``) qui contient :
 
 ``version: "2"
