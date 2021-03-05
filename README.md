@@ -55,6 +55,19 @@ Avec les deus services Grafana et MySQL. ``image`` correspond au type de service
     
 L'instruction dans ``volumes`` récupère les données du fichier ``country_vaccinations.sql`` et les monte dans le docker MySQL.
 
+## Grafana - Connexion entre les deux Dockers :
 
+-Ouverture sur le navigateur de l'adresse IP du serveur suivi du port Grafana (``http://10.10.51.151:3000``),
+-Première connexion Grafana avec identifiant ``admin`` et mot de passe ``admin``,
+-Pas de choix de nouvel identifiant et mot de passe (``Skip``),
+-Ajout du Docker MySQL dans ``Configuration -> Data Source -> MySQL``, avec :
+    -Name = MySQL,
+    -Host = country_vaccinations_mysql_1 (le nom du serveur MySQL),
+    -Database = country_vaccinations,
+    -User = root,
+    -Password = root,
+    => Save & Test
     
-    
+## Grafana - Création des Dashboards :
+
+
