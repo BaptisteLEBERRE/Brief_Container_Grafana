@@ -58,9 +58,13 @@ L'instruction dans ``volumes`` récupère les données du fichier ``country_vacc
 ## Grafana - Connexion entre les deux Dockers :
 
 -Ouverture sur le navigateur de l'adresse IP du serveur suivi du port Grafana (``http://10.10.51.151:3000``),
+
 -Première connexion Grafana avec identifiant ``admin`` et mot de passe ``admin``,
+
 -Pas de choix de nouvel identifiant et mot de passe (``Skip``),
+
 -Ajout du Docker MySQL dans ``Configuration -> Data Source -> MySQL``, avec :
+
     -Name = MySQL,
     -Host = country_vaccinations_mysql_1 (le nom du serveur MySQL),
     -Database = country_vaccinations,
@@ -70,4 +74,33 @@ L'instruction dans ``volumes`` récupère les données du fichier ``country_vacc
     
 ## Grafana - Création des Dashboards :
 
+-``Create -> Dashboard -> + Add New Panel``,
 
+-``Edit SQL`` :
+
+    SELECT
+      date AS "time",
+      people_fully_vaccinated,
+      people_vaccinated
+    FROM country_vaccinations
+    WHERE
+      $__timeFilter(date) AND
+      country = 'United States'
+    ORDER BY date
+
+-Modifications des paramètres d'affichage dans ``Panel`` :
+
+    -``Panel -> Setting -> Panel Title`` = ``Sommes des personnes vaccinées aux Etats-Unis``,
+
+    -``Panel -> Visualisation -> Graph``,
+    
+    -``Panel -> Display`` => Cocher ``Lines`` et ``Points``.
+    
+-``Save``.
+
+Résultat :
+    
+    IMAGE
+
+
+    
