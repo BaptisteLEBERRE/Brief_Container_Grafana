@@ -102,7 +102,7 @@ L'instruction dans ``volumes`` récupère les données du fichier ``country_vacc
 
 Résultat :
     
-(Dashboard_personnes_vaccinees_100.png)
+!(Dashboard_personnes_vaccinees_100.png)
 
 ### Dashboard "Personnes vaccinées sur cent, par pays" :
     
